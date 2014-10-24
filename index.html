@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script>
+			// Before anything, check if the URL needs to be rerouted
+			var path = window.location.pathname;
+			path = path.substring(1, path.length);
+			if (path) {
+				var parts = path.split("/");
+				// If there are 2 or more partitions within the URL, it needs a redirect
+				if (parts.length >= 2) {
+					// Decode the destination and forward the user
+					window.location = "http://" + window.atob(parts[0]);
+				}
+			}
+			
+		</script>
+		<title>Message In A URL: Store Messages In URLs</title>
+		<link rel="icon" type="image/png" href="favicon.png">
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+		<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<script src="http://miaurl.com/miaurl.js"></script>
+		<link rel="stylesheet" href="http://miaurl.com/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="center-column">
+				<img src="http://miaurl.com/miaurl_logo.png" alt="Message In A URL" title="Message In A URL"/>
+				<h4>Message In A URL</h4>
+				<p>Make Your URLs Say Something</p>
+				<div class="left-inner-addon">
+				    <i class="fa fa-quote-left fa-2x"></i>
+				    <input type="text" class="form-control large-input" id="message" placeholder="Message" />
+				</div>
+				<div class="left-inner-addon">
+				    <i class="fa fa-arrow-circle-o-right fa-2x"></i>
+				    <input type="text" class="form-control large-input" id="destination" placeholder="Destination URL" />
+				</div>
+				<button class="btn btn-warning" onclick="miaurlEncoding()"><i class="fa fa-flash"></i> Generate!</button>
+				<textarea id="generated" class="form-control generated-url" rows="5"></textarea>
+			</div>
+		</div>
+	</body>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-37069368-2', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
+</html>
